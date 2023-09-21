@@ -1,0 +1,114 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\geometry{a4paper, left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+\usepackage{fancyhdr}
+\usepackage{titling}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{fontspec}
+\usepackage{ragged2e}
+\usepackage{graphicx}
+\usepackage[indent=0.66cm]{parskip}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{framed}
+
+\title{$title$}
+\author{$author$}
+\date{\today}
+
+% Configuration des en-têtes et des pieds de page pour les pages normales
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\vspace{0.66cm}$author$}
+\setlength{\headsep}{1.33cm}
+\lhead{$shorttitle$}
+\rfoot{\thepage}
+
+\definecolor{black}{HTML}{000000} % pour le texte général et les paragraphes
+\definecolor{titleColor}{HTML}{273C50} % pour les titres
+
+\setcounter{secnumdepth}{0} % pas de numérotation sur les titres
+
+\setmainfont{Open Sans}
+\newfontfamily\oswald{Oswald}
+\newfontfamily\sans{Open Sans}
+
+% les titres 1
+\titleformat{\section}[block]{\oswald\bfseries\color{titleColor}\fontsize{20}{24}\selectfont}{}{0em}{}
+\titlespacing*{\section}{0pt}{20pt}{6pt}
+%saut de page avant les titres 1
+\let\oldsection\section
+\renewcommand{\section}{
+    \clearpage
+    \oldsection
+}
+
+% les titres 2
+\titleformat{\subsection}[block]{\oswald\bfseries\color{titleColor}\fontsize{16}{24}\selectfont}{}{0em}{}
+\titlespacing*{\subsection}{0pt}{18pt}{6pt}
+
+% les titres 3
+\titleformat{\subsection}[block]{\oswald\bfseries\color{titleColor}\fontsize{14}{24}\selectfont}{}{0em}{}
+\titlespacing*{\subsection}{0pt}{16pt}{4pt}
+
+% interlignes des paragraphes
+\setstretch{1.15}
+
+% listes à puce
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+%style des liste à puce
+\setlist[itemize,1]{label=\bullet}
+\setlist[itemize,2]{label=\diamond}
+  
+% style des liens
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=blue,
+    linkbordercolor={0 0 1}, % Couleur du cadre autour des liens internes
+    pdfborderstyle={/S/U/W 1} % Style du cadre autour des liens
+}
+
+% on ajoute [H] à toute les figures
+\let\oldfigure\figure
+\renewcommand{\figure}{\oldfigure[H]}
+
+\begin{document}
+
+% Créez une page de garde personnalisée sans en-têtes ni pieds de page
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+
+    % Insérer les deux images côte à côte dans une seule minipage
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \includegraphics[width=0.6\textwidth]{ressources/logoUM.png} % Chemin de l'image mis à jour
+    \end{minipage}%
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{ressources/logoIUT.png} % Chemin de l'image mis à jour
+    \end{minipage}
+
+    \vspace*{4cm}
+    \Huge\oswald\fontsize{26}{24}\color{titleColor}\bfseries $title$\par
+    \vspace{2cm}
+    \vfill
+    \raggedleft
+    {\Large\sans\bfseries\linespread{1.2}\fontsize{11}{24}\color{black}\selectfont $schoolyear$\par
+    BUT Informatique semestre $semester$\par
+    $author$\par}
+\end{titlepage}
+
+$body$
+
+\end{document}
