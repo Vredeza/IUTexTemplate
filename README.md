@@ -6,6 +6,8 @@ Résultats :
 
 ![markdown](markdown.md)
 
+![output](output.pdf)
+
 ## Pré-requis
 
 - [Pandoc](https://pandoc.org/)
