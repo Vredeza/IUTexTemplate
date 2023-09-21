@@ -82,6 +82,9 @@
 \let\oldfigure\figure
 \renewcommand{\figure}{\oldfigure[H]}
 
+\let\oldincludegraphics\includegraphics
+\renewcommand{\includegraphics}[2][]{\oldincludegraphics[width=15cm, #1]{#2}}
+
 \begin{document}
 
 % Créez une page de garde personnalisée sans en-têtes ni pieds de page
