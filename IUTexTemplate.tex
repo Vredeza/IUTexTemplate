@@ -18,6 +18,7 @@
 \usepackage{amsfonts}
 \usepackage{float}
 \usepackage{framed}
+\usepackage{fancyvrb}
 
 \title{$title$}
 \author{$author$}
@@ -33,6 +34,7 @@
 
 \definecolor{black}{HTML}{000000} % pour le texte général et les paragraphes
 \definecolor{titleColor}{HTML}{273C50} % pour les titres
+\definecolor{grisFonce}{RGB}{20,20,20}
 
 \setcounter{secnumdepth}{0} % pas de numérotation sur les titres
 
@@ -82,8 +84,48 @@
 \let\oldfigure\figure
 \renewcommand{\figure}{\oldfigure[H]}
 
+% largeur max = 15cm
 \let\oldincludegraphics\includegraphics
 \renewcommand{\includegraphics}[2][]{\oldincludegraphics[width=15cm, #1]{#2}}
+
+\newsavebox{\grisFonceBox}
+\newenvironment{Shaded}
+{%
+    \color{white}
+    \begin{lrbox}{\grisFonceBox}%
+    \begin{minipage}{\linewidth}%
+}
+{%
+    \end{minipage}%
+    \end{lrbox}%
+    \colorbox{grisFonce}{\usebox{\grisFonceBox}}%
+    \color{black}
+}
+
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+\newcommand{\RegionMarkerTok}[1]{{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+\newcommand{\NormalTok}[1]{{#1}}
+\newcommand{\BuiltInTok}[1]{{#1}}
+\newcommand{\ControlFlowTok}[1]{{#1}}
+\newcommand{\OperatorTok}[1]{{#1}}
+\newcommand{\AttributeTok}[1]{{#1}}
+\newcommand{\ExtensionTok}[1]{{#1}}
+
+%\EndDefineVerbatimEnvironment{Highlighting}
+
 
 \begin{document}
 
