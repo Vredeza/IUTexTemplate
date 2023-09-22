@@ -10,7 +10,7 @@ schoolyear: 2023-2024
 
 Lorem ipsum dolor sit amet, [consectetur](https://google.com) adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
-![Logo UM](ressources/logoIUT.png)
+![Logo UM](../ressources/logoIUT.png)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat : 
 

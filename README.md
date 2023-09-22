@@ -35,4 +35,4 @@ schoolyear: 2023-2024
 ---
 ``` 
 
-Vous pouvez voir l'exemple dans [`markdown.md`](example/markdown.md).
+Vous pouvez voir l'exemple dans [`markdown.md`](examples/markdown.md).
